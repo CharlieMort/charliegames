@@ -1,0 +1,15 @@
+{
+  "name": "Charlie Games Server",
+  "version": "1.0.0",
+  "description": "The server side for the charliegames.com website. Contains socket handeling and database management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charlie Mortimer",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "socket.io": "^4.2.0"
+  }
+}
