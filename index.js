@@ -10,17 +10,22 @@ const PORT = process.env.PORT | 5000;
 // Initialises express app
 const app = express();
 
+// Global variables
 let rooms = {
-    placeholder: {}
+    placeholder: {} // Placeholder
 }
-let codes = []
-let queue = []
+let codes = [] // Holds all codes in use
+let queue = [] // Holds all player sockets queueing for game PLACEHOLDER
 
 // Specifiying middleware to use JSON makes all incoming msg's json
 // cors allows me to host the frontend on a different server
 app.use(express.json());
 app.use(cors());
 
+// Placeholder Room Function 
+// - Generates Unique Code
+// - Create Basic Room With code and players empty attributes
+// - Return the code
 function CreateRoom_PLACEHOLDER_() {
     let code = GenerateRandomCode();
     while (codes.includes(code)) {
@@ -35,6 +40,10 @@ function CreateRoom_PLACEHOLDER_() {
     return code;
 }
 
+// Generates A Random Code
+// - Change codeLength for longer or shorter codes
+// - Selects random character from string and repeats for how long the codelength is
+// - Returns the code
 function GenerateRandomCode() {
     let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let codeLength = 5;
@@ -44,6 +53,10 @@ function GenerateRandomCode() {
     }
     return code;
 }
+
+// Join Room Function
+// - Check if theres room for the player
+// - 
 
 function JoinRoom(code, game, playerSocket) {
     let idx = 2;
